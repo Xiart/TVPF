@@ -1,0 +1,14 @@
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\bin\Debug\netcoreapp2.1\LitReview_ORM.deps.json
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\bin\Debug\netcoreapp2.1\LitReview_ORM.runtimeconfig.json
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\bin\Debug\netcoreapp2.1\LitReview_ORM.runtimeconfig.dev.json
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\bin\Debug\netcoreapp2.1\LitReview_ORM.dll
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\bin\Debug\netcoreapp2.1\LitReview_ORM.pdb
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\obj\Debug\netcoreapp2.1\LitReview_ORM.csprojAssemblyReference.cache
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\obj\Debug\netcoreapp2.1\LitReview_ORM.csproj.CoreCompileInputs.cache
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\obj\Debug\netcoreapp2.1\LitReview_ORM.AssemblyInfoInputs.cache
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\obj\Debug\netcoreapp2.1\LitReview_ORM.AssemblyInfo.cs
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\obj\Debug\netcoreapp2.1\LitReview_ORM.dll
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\obj\Debug\netcoreapp2.1\LitReview_ORM.pdb
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\bin\Debug\netcoreapp2.1\DatabaseTVP_Core.dll
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\bin\Debug\netcoreapp2.1\DatabaseTVP_Core.pdb
+C:\Users\NOC-PC3\source\repos\LitReview_ORM\LitReview_ORM\obj\Debug\netcoreapp2.1\LitReview_ORM.csproj.CopyComplete

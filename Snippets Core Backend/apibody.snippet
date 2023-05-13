@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>API Controller Complete Body</Title>
+      <Author>Ziyad Sanaullah 12092020 1037</Author>
+      <Description>A Complete API COntroller body will be generated with all the built in necessary methods and Properties also with ViewModel COnversio nvia ZBinder</Description>
+      <Shortcut>apibody</Shortcut>
+    </Header>
+    <Snippet>
+		<Declarations>				
+				<Literal>
+					<ID>ModuleName</ID>
+					<Default>Module</Default>
+					<ToolTip>Change the name of Module</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>EntityName</ID>
+					<Default>Entity</Default>
+					<ToolTip>Change the name of Entity</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="CSharp">
+        <![CDATA[ 		
+		private const string Module = "$ModuleName$";
+		private const string Entity = "$EntityName$";
+		
+		//Your API Methods Here
+				
+		public string Save(List<object> ParamObj, string IP, string CInfo)
+        {
+            return ZBinder.ZBinder.BindModel<MIS_JSMU.Areas.$ModuleName$.ViewModels.V1.$EntityName$, MIS_JSMU.Areas.$ModuleName$.Models.$EntityName$>(((MIS_JSMU.Areas.$ModuleName$.ViewModels.V1.$EntityName$)ParamObj.ElementAt(0)), new MIS_JSMU.Areas.$ModuleName$.Models.$EntityName$()).$ModuleName$_$EntityName$Save((BValues)ParamObj.ElementAt(1), IP, CInfo);
+        }
+		]]>
+      </Code>	  
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LitReview_ORM", "LitReview_ORM\LitReview_ORM.csproj", "{BE8507DE-D481-4BA5-9FC1-0EBFFEBF77C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE8507DE-D481-4BA5-9FC1-0EBFFEBF77C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE8507DE-D481-4BA5-9FC1-0EBFFEBF77C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE8507DE-D481-4BA5-9FC1-0EBFFEBF77C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE8507DE-D481-4BA5-9FC1-0EBFFEBF77C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02759B0E-D1A2-40EC-927B-42F7223944C8}
+	EndGlobalSection
+EndGlobal

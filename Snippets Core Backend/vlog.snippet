@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Logger Line</Title>
+      <Author>Ziyad Sanaullah 0092019</Author>
+      <Description>Snippet for Logger Line for Page Logging</Description>
+      <Shortcut>vlog</Shortcut>
+    </Header>
+    <Snippet>
+		<Declarations>
+				
+			</Declarations>
+      <Code Language="CSharp">
+        <![CDATA[
+		Logger_Core.Loging.DB_LogVisit(Convert.ToInt32(HttpContext.Session.GetInt32("UserId")), HttpContext.Request.Path.Value, Connection.GetLogConnection(), "", HttpContext.Connection.RemoteIpAddress.ToString(), new ClientInfo.UserAgent(HttpContext.Request.Headers["User-Agent"]).BasicInfo);
+		]]>
+      </Code>
+	  <Imports>
+        <Import>
+          <Namespace>Microsoft.AspNetCore.Http</Namespace>
+        </Import>
+      </Imports>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

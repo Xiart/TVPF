@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Model GetAll Method</Title>
+      <Author>Ziyad Sanaullah 29082019 1230</Author>
+      <Description>Snippet for Model Get All Method</Description>
+      <Shortcut>mmany</Shortcut>
+    </Header>
+    <Snippet>
+		<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>Module_ModelGetAll</Default>
+					<ToolTip>Change the name of Function</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>RetType</ID>
+					<Default>object</Default>
+					<ToolTip>Returning Type for Generic List</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="CSharp">
+        <![CDATA[ 
+		public List<$RetType$> $name$(int UserId,string IP, string CInfo)
+        {
+            try
+            {
+                List<$RetType$> retlist = DataBase.ExecuteQuery<$RetType$>(new { UserId }, Connection.GetConnection());
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Posetive, "", new {UserId}, "", Module, Connection.GetLogConnection(), CInfo, IP, UserId);
+                return retlist;
+            }
+            catch (Exception ex)
+            {
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Negative, ex.Message, new { UserId }, "", Module, Connection.GetLogConnection(), CInfo, IP, UserId);
+                return null;
+            }
+        }
+		]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

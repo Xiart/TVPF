@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Model Update Method</Title>
+      <Author>Ziyad Sanaullah 29082019 1230</Author>
+      <Description>Snippet for Model Update Method</Description>
+      <Shortcut>mupdate</Shortcut>
+    </Header>
+    <Snippet>
+		<Declarations>
+				<Literal>
+					<ID>name</ID>
+					<Default>Module_ModelUpdate</Default>
+					<ToolTip>Change the name of Function</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>PropName</ID>
+					<Default>Name</Default>
+					<ToolTip>Returning Propert ywith Name Field of string type</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>ReturnType</ID>
+					<Default>object</Default>
+					<Function>ClassName()</Function>
+					<ToolTip>Define Generic List a Return Object</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="CSharp">
+        <![CDATA[ 
+		public string $name$(int UserId, string IP, string CInfo)
+        {
+            try
+            {
+                this.CreatedBy = UserId; this.ModifiedBy = UserId;
+                string Message = DataBase.ExecuteQuery<$ReturnType$>(new { x = this }, Connection.GetConnection()).FirstOrDefault().ReturnMessage;
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Posetive, "", new { x = this }, "", Module, Connection.GetLogConnection(), CInfo, IP, UserId);
+                return Message;
+            }
+            catch (Exception ex)
+            {
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Negative, ex.Message, new { x = this }, "", Module, Connection.GetLogConnection(), CInfo, IP, UserId);
+                return ex.Message;
+            }
+        }
+		]]>
+      </Code>
+	   <Imports>
+        <Import>
+          <Namespace>DatabaseTVP_Core</Namespace>
+        </Import>
+      </Imports>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

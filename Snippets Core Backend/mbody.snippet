@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Model Complete Body</Title>
+      <Author>Ziyad Sanaullah 03092019 1059</Author>
+      <Description>A Complete Model body will be generated with all the built in necessary methods and Properties</Description>
+      <Shortcut>mbody</Shortcut>
+    </Header>
+    <Snippet>
+		<Declarations>
+				<Literal>
+					<ID>SaveName</ID>
+					<Default>Module_ClassNameSave</Default>
+					<ToolTip>Change the name of Function to Module_ModelSave</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>UpdateName</ID>
+					<Default>Module_ClassNameUpdate</Default>
+					<ToolTip>Change the name of Function to Module_ModelUpdate</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>GetAllName</ID>
+					<Default>Module_ClassNameGetAll</Default>
+					<ToolTip>Change the name of Function to Module_ModelGetAll</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>GetByIdName</ID>
+					<Default>Module_ClassNameGetById</Default>
+					<ToolTip>Change the name of Function to Module_ModelGetById</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>ReturnType</ID>
+					<Default>object</Default>
+					<Function>ClassName()</Function>
+					<ToolTip>Define Generic List a Return Object</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>ModuleName</ID>
+					<Default>Module</Default>
+					<ToolTip>Change the name of Module</ToolTip>
+				</Literal>
+			</Declarations>
+      <Code Language="CSharp">
+        <![CDATA[ 		
+		private const string Module = "$ModuleName$";
+		
+		//Your Properties for Model Here
+		
+		[TVP]
+        public int TenantId { get; set; }
+        [TVP]
+        public string  AppId { get; set; }
+        [TVP]
+        public int CreatedBy { get; set; }
+        [TVP]
+        public int ModifiedBy { get; set; }
+
+        //View Only Properties
+        public string  ReturnMessage { get; set; }
+		
+		public string $ModuleName$_$ReturnType$Save (BValues bv,string IP, string CInfo)
+        {
+            try
+            {
+                this.CreatedBy = bv.UserId; this.ModifiedBy = bv.UserId; this.TenantId = bv.TenantId; this.AppId = bv.AppId;
+                string Message = DataBase.ExecuteQuery<$ReturnType$>(new { x = this }, Connection.GetConnection()).FirstOrDefault().ReturnMessage;
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Posetive, "", new { x = this }, "", Module, Connection.GetLogConnection(), CInfo, IP, bv.UserId);
+                return Message;
+            }
+            catch (Exception ex)
+            {
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Negative, ex.Message, new { x = this }, "", Module, Connection.GetLogConnection(), CInfo, IP, bv.UserId);
+                return ex.Message;
+            }
+        }
+		
+		
+		public string $ModuleName$_$ReturnType$Update (BValues bv, string IP, string CInfo)
+        {
+            try
+            {
+                this.ModifiedBy = bv.UserId; this.TenantId = bv.TenantId; this.AppId = bv.AppId;
+                string Message = DataBase.ExecuteQuery<$ReturnType$>(new { x = this }, Connection.GetConnection()).FirstOrDefault().ReturnMessage;
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Posetive, "", new { x = this }, "", Module, Connection.GetLogConnection(), CInfo, IP, bv.UserId);
+                return Message;
+            }
+            catch (Exception ex)
+            {
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Negative, ex.Message, new { x = this }, "", Module, Connection.GetLogConnection(), CInfo, IP, bv.UserId);
+                return ex.Message;
+            }
+        }
+		
+		public $ReturnType$ $ModuleName$_$ReturnType$GetById (int Id,BValues bv,string IP, string CInfo)
+        {
+            try
+            {
+                $ReturnType$ ret = DataBase.ExecuteQuery<$ReturnType$>(new {bv.UserId, bv.TenantId, bv.AppId, Id  }, Connection.GetConnection()).FirstOrDefault();
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Posetive, "", new {bv.UserId, bv.TenantId, bv.AppId, Id }, "", Module, Connection.GetLogConnection(), CInfo, IP, bv.UserId);
+                return ret;
+            }
+            catch (Exception ex)
+            {
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Negative, ex.Message, new {bv.UserId, bv.TenantId, bv.AppId, Id  }, "", Module, Connection.GetLogConnection(), CInfo, IP, bv.UserId);
+                return null;
+            }
+        }
+		
+		public List<$ReturnType$> $ModuleName$_$ReturnType$GetAll (BValues bv,string IP, string CInfo)
+        {
+            try
+            {
+                List<$ReturnType$> retlist = DataBase.ExecuteQuery<$ReturnType$>(new { bv.UserId, bv.TenantId, bv.AppId }, Connection.GetConnection());
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Posetive, "", new {bv.UserId, bv.TenantId, bv.AppId}, "", Module, Connection.GetLogConnection(), CInfo, IP, bv.UserId);
+                return retlist;
+            }
+            catch (Exception ex)
+            {
+                Logger_Core.Loging.DB_Log(Logger_Core.eLogType.Log_Negative, ex.Message, new { bv.UserId, bv.TenantId, bv.AppId }, "", Module, Connection.GetLogConnection(), CInfo, IP, bv.UserId);
+                return null;
+            }
+        }
+		
+		
+		]]>
+      </Code>
+	   <Imports>
+        <Import>
+          <Namespace>DatabaseTVP_Core</Namespace>
+        </Import>
+      </Imports>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
