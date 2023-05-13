@@ -5,7 +5,7 @@ Table Valued Parameter Framework Workings
 
 - The whole repository consists of 3 folders and 1 file.  
 
-#### DatabaseTVP_Core  
+#### TVPF Framework  
 - This folder is the main code folder of the whole framework that has been developed.
 
 #### Snippets Core Backend
